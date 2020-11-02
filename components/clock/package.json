@@ -1,0 +1,14 @@
+{
+  "name": "@kojiro.ueda/simple-clock",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^1.12.4",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "scripts": {
+    "build": "parcel build index.js"
+  }
+}

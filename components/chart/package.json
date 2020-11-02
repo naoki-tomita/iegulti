@@ -1,0 +1,13 @@
+{
+  "name": "@kojiro.ueda/simple-chart",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "c3": "^0.7.20",
+    "parcel": "^1.12.4"
+  },
+  "scripts": {
+    "build": "parcel build index.js"
+  }
+}
