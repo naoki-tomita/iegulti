@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { render } from "react-dom";
-import "@kojiro.ueda/simple-clock"
-import "@kojiro.ueda/simple-chart";
 
 const App = () => {
   const [data, setData] = useState([[0]]);
