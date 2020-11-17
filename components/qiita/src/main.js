@@ -12,4 +12,4 @@ class VueApp extends HTMLElement {
   }
 }
 
-customElements.define("qiita-list");
+customElements.define("qiita-list", VueApp);
