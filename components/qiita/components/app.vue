@@ -8,7 +8,7 @@
       <img
         style="width: 120px;"
         v-if="loading"
-        src="https://lh3.googleusercontent.com/proxy/DqyXiV4iIzAH9s5SPo2IHeU-y1VqtSV8RpFz4TaT2av0OPL2ufRZr-YTPbVtuimo39ZIfO4h8xTWKGb9X8n_XfVRdRpW1Z3Qadmz9RJ88r1961d3cD-4FSA726VQQ42oI3dgVPAk6yAmWtLa3qC3d4VqzBgWG-ykRZZGPA"
+        src="http://www.lettersmarket.com/uploads/lettersmarket/blog/loaders/common_orange/ajax_loader_orange_128.gif"
       >
     </div>
     <section v-if="!loading">
