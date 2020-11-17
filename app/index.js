@@ -49,6 +49,7 @@ const App = () => {
       <simple-chart data-columns={JSON.stringify(data.map((row, i) => [`data_${i}`, ...row]))}></simple-chart>
     </div>
     <div style={{width: "800px", height: "320px"}}>
+      <div>横幅を800pxに制限しています</div>
       <qiita-list></qiita-list>
     </div>
     </>
