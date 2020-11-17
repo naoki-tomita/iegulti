@@ -29,9 +29,9 @@ const App = () => {
       <table>
         <tbody>
         {data.map((row, i) =>
-          <tr>
+          <tr key={i}>
             {row.map((column, j) =>
-              <td>
+              <td key={j}>
                 <input
                   value={column}
                   onChange={el => changeData(i, j, el.target.value)}
@@ -47,6 +47,9 @@ const App = () => {
       </table>
       <button onClick={addRow}>+</button>
       <simple-chart data-columns={JSON.stringify(data.map((row, i) => [`data_${i}`, ...row]))}></simple-chart>
+    </div>
+    <div style={{width: "800px", height: "320px"}}>
+      <qiita-list></qiita-list>
     </div>
     </>
   );

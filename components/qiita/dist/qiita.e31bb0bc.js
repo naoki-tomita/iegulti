@@ -12564,7 +12564,7 @@ function extractText(parsed) {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("main", [
+    _c("main", { staticStyle: { overflow: "scroll" } }, [
       _c(
         "div",
         { staticStyle: { display: "flex", "justify-content": "center" } },
@@ -12574,7 +12574,7 @@ function extractText(parsed) {
                 staticStyle: { width: "120px" },
                 attrs: {
                   src:
-                    "https://lh3.googleusercontent.com/proxy/DqyXiV4iIzAH9s5SPo2IHeU-y1VqtSV8RpFz4TaT2av0OPL2ufRZr-YTPbVtuimo39ZIfO4h8xTWKGb9X8n_XfVRdRpW1Z3Qadmz9RJ88r1961d3cD-4FSA726VQQ42oI3dgVPAk6yAmWtLa3qC3d4VqzBgWG-ykRZZGPA"
+                    "http://www.lettersmarket.com/uploads/lettersmarket/blog/loaders/common_orange/ajax_loader_orange_128.gif"
                 }
               })
             : _vm._e()
@@ -12719,7 +12719,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57001" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59269" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

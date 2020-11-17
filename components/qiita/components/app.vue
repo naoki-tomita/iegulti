@@ -3,7 +3,7 @@
   <header>
     <h1>Qiita list</h1>
   </header>
-  <main>
+  <main style="overflow: scroll">
     <div style="display: flex; justify-content: center">
       <img
         style="width: 120px;"
