@@ -4,15 +4,14 @@
     <h1>Qiita list</h1>
   </header>
   <main style="overflow: scroll">
-    <div style="display: flex; justify-content: center">
+    <div style="display: flex; justify-content: center" v-if="loading">
       <img
-        style="width: 120px;"
-        v-if="loading"
         src="http://www.lettersmarket.com/uploads/lettersmarket/blog/loaders/common_orange/ajax_loader_orange_128.gif"
       >
     </div>
     <section v-if="!loading">
-      <aside v-for="item in list" v-bind:key="item.id">
+      <aside v-for="item in list" v-bind:key="item.id" >
+        <a v-bind:href="item.url" style="text-decoration: none; color: var(--color-text)">
         <h3>{{ item.title }}</h3>
         <sup>{{ item.userName }}</sup>
         <p style="
@@ -21,6 +20,7 @@
           -webkit-box-orient: vertical;
           overflow: hidden; word-break: break-all;"
         >{{ item.abstract }}</p>
+        </a>
       </aside>
     </section>
   </main>
@@ -58,7 +58,9 @@ export default {
         title: it.title,
         abstract: extractText(markdown.parse(it.body)).slice(0, 200),
         body: it.rendered_body,
-        userName: it.user.name || it.user.id || it.user.github_login_name
+        userName: it.user.name || it.user.id || it.user.github_login_name,
+        url: it.url,
+        id: it.id,
       })));
     }
   }

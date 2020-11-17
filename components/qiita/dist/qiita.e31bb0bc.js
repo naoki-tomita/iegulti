@@ -12518,7 +12518,9 @@ var _default = {
         title: it.title,
         abstract: extractText(_markdown.markdown.parse(it.body)).slice(0, 200),
         body: it.rendered_body,
-        userName: it.user.name || it.user.id || it.user.github_login_name
+        userName: it.user.name || it.user.id || it.user.github_login_name,
+        url: it.url,
+        id: it.id
       }));
     }
 
@@ -12565,43 +12567,54 @@ function extractText(parsed) {
     _vm._m(0),
     _vm._v(" "),
     _c("main", { staticStyle: { overflow: "scroll" } }, [
-      _c(
-        "div",
-        { staticStyle: { display: "flex", "justify-content": "center" } },
-        [
-          _vm.loading
-            ? _c("img", {
-                staticStyle: { width: "120px" },
+      _vm.loading
+        ? _c(
+            "div",
+            { staticStyle: { display: "flex", "justify-content": "center" } },
+            [
+              _c("img", {
                 attrs: {
                   src:
                     "http://www.lettersmarket.com/uploads/lettersmarket/blog/loaders/common_orange/ajax_loader_orange_128.gif"
                 }
               })
-            : _vm._e()
-        ]
-      ),
+            ]
+          )
+        : _vm._e(),
       _vm._v(" "),
       !_vm.loading
         ? _c(
             "section",
             _vm._l(_vm.list, function(item) {
               return _c("aside", { key: item.id }, [
-                _c("h3", [_vm._v(_vm._s(item.title))]),
-                _vm._v(" "),
-                _c("sup", [_vm._v(_vm._s(item.userName))]),
-                _vm._v(" "),
                 _c(
-                  "p",
+                  "a",
                   {
                     staticStyle: {
-                      display: "-webkit-box",
-                      "-webkit-line-clamp": "4",
-                      "-webkit-box-orient": "vertical",
-                      overflow: "hidden",
-                      "word-break": "break-all"
-                    }
+                      "text-decoration": "none",
+                      color: "var(--color-text)"
+                    },
+                    attrs: { href: item.url }
                   },
-                  [_vm._v(_vm._s(item.abstract))]
+                  [
+                    _c("h3", [_vm._v(_vm._s(item.title))]),
+                    _vm._v(" "),
+                    _c("sup", [_vm._v(_vm._s(item.userName))]),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticStyle: {
+                          display: "-webkit-box",
+                          "-webkit-line-clamp": "4",
+                          "-webkit-box-orient": "vertical",
+                          overflow: "hidden",
+                          "word-break": "break-all"
+                        }
+                      },
+                      [_vm._v(_vm._s(item.abstract))]
+                    )
+                  ]
                 )
               ])
             }),
@@ -12680,7 +12693,7 @@ class AppElement extends HTMLElement {
     this.attachShadow({
       mode: "open"
     });
-    this.shadowRoot.innerHTML = "\n    <style>\n    @import 'https://unpkg.com/mvp.css';\n    * {\n      --border-radius: 5px;\n      --box-shadow: 2px 2px 10px;\n      --color: #118bee;\n      --color-accent: #118bee0b;\n      --color-bg: #fff;\n      --color-bg-secondary: #e9e9e9;\n      --color-secondary: #920de9;\n      --color-secondary-accent: #920de90b;\n      --color-shadow: #f4f4f4;\n      --color-text: #000;\n      --color-text-secondary: #999;\n      --font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;\n      --hover-brightness: 1.2;\n      --justify-important: center;\n      --justify-normal: left;\n      --line-height: 150%;\n      --width-card: 285px;\n      --width-card-medium: 460px;\n      --width-card-wide: 800px;\n      --width-content: 1080px;\n    }\n    </style>";
+    this.shadowRoot.innerHTML = "\n    <style>\n    @import 'https://unpkg.com/mvp.css';\n    * {\n      --border-radius: 5px;\n      --box-shadow: 4px 4px 16px;\n      --color: #118bee;\n      --color-accent: #118bee0b;\n      --color-bg: #fff;\n      --color-bg-secondary: #e9e9e9;\n      --color-secondary: #920de9;\n      --color-secondary-accent: #920de90b;\n      --color-shadow: #f4f4f4;\n      --color-text: #000;\n      --color-text-secondary: #999;\n      --font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;\n      --hover-brightness: 1.2;\n      --justify-important: center;\n      --justify-normal: left;\n      --line-height: 150%;\n      --width-card: 285px;\n      --width-card-medium: 460px;\n      --width-card-wide: 800px;\n      --width-content: 1080px;\n    }\n    </style>";
     this.shadowRoot.append(this.div);
   }
 
@@ -12719,7 +12732,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59269" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62150" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -12,7 +12,7 @@ class AppElement extends HTMLElement {
     @import 'https://unpkg.com/mvp.css';
     * {
       --border-radius: 5px;
-      --box-shadow: 2px 2px 10px;
+      --box-shadow: 4px 4px 16px;
       --color: #118bee;
       --color-accent: #118bee0b;
       --color-bg: #fff;
