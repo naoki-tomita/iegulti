@@ -17,7 +17,7 @@ const TagInput = ({ onComplete }) => {
         <>
           <span style={{ backgroundColor: "#f0f0f0", borderRadius: 4, border: "1px solid #888" }} key={i}>
             {it}
-          </span>
+          </span>,
         </>
       )}
       <input
