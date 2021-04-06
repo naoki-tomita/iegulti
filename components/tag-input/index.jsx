@@ -38,7 +38,7 @@ class TagInputElement extends HTMLElement {
   }
 
   onComplete(tags) {
-    const event = new CustomEvent("completeTag", {
+    const event = new CustomEvent("complete-tag", {
       bubbles: true,
       composed: true,
       detail: { tags },
