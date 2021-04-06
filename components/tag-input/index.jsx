@@ -12,16 +12,16 @@ const TagInput = ({ onComplete }) => {
   }
   return (
     <>
-    <span style={{ border: "1px solid #000", display: "inline-block", fontSize: 12 }}>
+    <span style={{ border: "1px solid #000", display: "inline-block", fontSize: 14 }}>
       {tags.map((it, i) =>
         <>
-          <span style={{ backgroundColor: "#f0f0f0", borderRadius: 4 }} key={i}>
+          <span style={{ backgroundColor: "#f0f0f0", borderRadius: 4, border: "1px solid #888" }} key={i}>
             {it}
-          </span>,
+          </span>
         </>
       )}
       <input
-        style={{ border: "none", height: "100%", outline: "none" }}
+        style={{ border: "none", height: "100%", outline: "none", fontSize: 14 }}
         value={currentTag}
         onKeyPress={e => (e.key === "Enter") && onCompleteTag()}
         onChange={e => setCurrentTag(e.target.value)}
