@@ -31,8 +31,6 @@ const TagInput = ({ onComplete }) => {
   );
 };
 
-
-
 class TagInputElement extends HTMLElement {
   constructor() {
     super();
