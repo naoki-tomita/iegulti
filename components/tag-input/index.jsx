@@ -10,6 +10,11 @@ const TagInput = ({ onComplete }) => {
     setCurrentTag("");
     onComplete(newTags);
   }
+  function onRemoveTag() {
+    const newTags = tags.slice(0, -1);
+    setTags(newTags);
+    onComplete(newTags);
+  }
   return (
     <>
     <span style={{ border: "1px solid #000", display: "inline-block", fontSize: 14 }}>
@@ -23,7 +28,18 @@ const TagInput = ({ onComplete }) => {
       <input
         style={{ border: "none", height: "100%", outline: "none", fontSize: 14 }}
         value={currentTag}
-        onKeyPress={e => (e.key === "Enter") && onCompleteTag()}
+        onKeyUp={e => {
+          switch (e.key) {
+            case "Enter":
+              return onCompleteTag();
+            case "Backspace":
+            case "Delete":
+              if (currentTag === "") {
+                return onRemoveTag();
+              }
+            default: console.log(e.key)
+          }
+        }}
         onChange={e => setCurrentTag(e.target.value)}
       />
     </span>
